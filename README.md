@@ -1,0 +1,1 @@
+# A placeholder to record my journey learning CS stuff
