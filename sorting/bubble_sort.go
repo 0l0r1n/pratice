@@ -1,7 +1,7 @@
 package sorting
 
-// InsertionSort runs at quadratic time
-func InsertionSort(items []int) {
+// BubbleSort runs at quadratic time
+func BubbleSort(items []int) {
 	n := len(items)
 	for i := 1; i < n; i++ {
 		j := i
