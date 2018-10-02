@@ -7,7 +7,7 @@ import (
 
 func TestInsertionSort(t *testing.T) {
 	data := []int{5, 3, 1, 24}
-	BubbleSort(data)
+	InsertionSort(data)
 	if !sort.IntsAreSorted(data) {
 		t.Errorf("Data not sorted: %v", data)
 	}
