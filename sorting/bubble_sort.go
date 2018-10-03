@@ -6,11 +6,13 @@ func BubbleSort(nums []int) {
 	swapped := true
 	for swapped {
 		swapped = false
-		for i := 1; i < n; i++ {
+		lastUnsorted := n - 1
+		for i := 1; i < lastUnsorted; i++ {
 			if nums[i-1] > nums[i] {
 				nums[i-1], nums[i] = nums[i], nums[i-1]
 				swapped = true
 			}
 		}
+		lastUnsorted--
 	}
 }
