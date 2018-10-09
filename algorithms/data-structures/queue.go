@@ -1,4 +1,4 @@
-package datastrucs
+package datastructs
 
 // Queue implementation
 type Queue struct {
