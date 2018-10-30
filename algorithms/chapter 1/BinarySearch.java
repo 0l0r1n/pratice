@@ -1,6 +1,10 @@
+import java.lang.System;
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
+
 public class BinarySearch {
     
-    public int indexOf(int[] a, int key) {
+    public static int indexOf(int[] a, int key) {
         int low = 0;
         int high = a.length - 1;
         while (low <= high) {

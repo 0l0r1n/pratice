@@ -34,7 +34,7 @@ public Interface IUF {
 }
 ```
 
-## Quadradic algorithms don't scalae
+## Quadradic algorithms don't scale
 
 - A a brute force quick find on 10 a large data set could take 30 years to compute
 - Quadratic algorithms do not scale with technology
