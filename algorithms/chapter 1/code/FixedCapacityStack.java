@@ -1,5 +1,6 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import edu.princeton.cs.algs4.*;
 
 public class FixedCapacityStack<Item> implements Iterable<Item> {
     private Item[] a;    
@@ -48,7 +49,6 @@ public class FixedCapacityStack<Item> implements Iterable<Item> {
             throw new UnsupportedOperationException();
         }
     }
-
 
     public static void main(String[] args) {
         int max = Integer.parseInt(args[0]);
