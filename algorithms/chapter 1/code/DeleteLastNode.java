@@ -1,13 +1,8 @@
-public class DeleteLastNode {
+public class DeleteLastNode<Item> {
 
-    private static class Node<Item> {
-        private Item item;
-        private Node<Item> next;
-    }
-
-    private static void doDelete(Node<Item> n) {
+    private static void doDelete(Node n) {
         if (n.next == null) n = null;
-        else if (n.next != null && n.next.next != null) doDelete(n.next);
-        else n.next = null;
+        if (n.next != null && n.next.next != null) doDelete(n.next);
     }
+
 }
