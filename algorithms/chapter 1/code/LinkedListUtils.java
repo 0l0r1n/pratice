@@ -49,6 +49,27 @@ public class LinkedListUtils {
         }
     }
 
+    public static Node reverse(Node head) {
+        Node current = head;
+        Node reverse = null;
+        while (current != null) {
+            Node next = current.next;
+            current.next = reverse;
+            reverse = current;
+            current = next;
+        }
+        return reverse;
+    }
+
+    public Node deleteDuplicates(Node head) {
+        Node current = head;
+        while (current != null && current.next != null) {
+            if (current.next.val == current.val) current.next = current.next.next;
+            else current = current.next;
+        }
+        return head;
+    }
+
     public static int recursiveMax(Node<Integer> n) {
         if (n == null) return 0;
         return recursiveMax(n.next, n.item);
