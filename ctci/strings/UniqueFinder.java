@@ -1,3 +1,4 @@
+import java.util.HashSet;
 import java.util.Set;
 import java.util.Vector;
 
@@ -7,7 +8,7 @@ class UniqueFinder {
     // time complexity of O(n)
     // space complexity of O(1)
     public static boolean areAllCharsUniqueSet(String s) {
-        Set<Character> uniqueChars = new Set<Character>();
+        Set<Character> uniqueChars = new HashSet<>();
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
             if (uniqueChars.contains(ch)) return false;
