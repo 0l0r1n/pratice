@@ -27,7 +27,7 @@ public class PalindromePermutation {
         return bitVector == 0 || checkExactlyOneBitSet(bitVector);
     }
 
-    private static int createBitVector(s) {
+    private static int createBitVector(String s) {
         int bitVector = 0;
         for (char c : s.toCharArray()) {
             int x = getCharNumber(c);
