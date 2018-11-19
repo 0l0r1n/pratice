@@ -10,3 +10,7 @@ Palindrome - a string that is the same forwards and backwards. To know if a stri
 - At most, only one char in the middle can have an odd count.
 
 To be more precise, strings with even length, after removing all non letter chars, must have all even counts of characters. Strings of odd length may have a single odd char in the middle.
+
+Sometimes, you don't need to count. You just need to know the odds and evens.
+
+In the context of computing, a vector is a linear sequence of numeric values that are stored contiguously in memory. A bit vector is a vector in which each element is a bit (so its value is either 0 or 1).

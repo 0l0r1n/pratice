@@ -22,6 +22,35 @@ public class PalindromePermutation {
         return true;
     }
 
+    public static boolean isPermutationOfPalindromeBitVector(String s) {
+        int bitVector = createBitVector(s);
+        return bitVector == 0 || checkExactlyOneBitSet(bitVector);
+    }
+
+    private static int createBitVector(s) {
+        int bitVector = 0;
+        for (char c : s.toCharArray()) {
+            int x = getCharNumber(c);
+            bitVector = toggle(bitVector, x);
+        }
+        return bitVector;
+    }
+
+    private static int toogle(int bitvector, int index) {
+        if (index < 0) return bitvector;
+        int mask = 1 << index;
+        if ((bitvector & mask) == 0) {
+             bitvector |= mask;
+        } else {
+            bitvector &= ~mask;
+        }
+        return bitvector;
+    }
+
+    private static boolean checkExactlyOneBitSet(int bitVector) {
+        return (bitVector & (bitVector - 1)) == 0;
+    }
+
     public static boolean isPermutationOfPalindrome(String s) {
         int[] table = buildCharFrequencyTable(s);
         return checkMaxOneOdd(table);
