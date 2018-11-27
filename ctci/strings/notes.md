@@ -16,3 +16,5 @@ Sometimes, you don't need to count. You just need to know the odds and evens.
 In the context of computing, a vector is a linear sequence of numeric values that are stored contiguously in memory. A bit vector is a vector in which each element is a bit (so its value is either 0 or 1).
 
 - when working with strings, is case sensitivity important?
+- String constant pool when more than one string variable reference the same string literal, the JVM reuses the constant from the string constant pool.
+- StringJoiner is a kind of collector
