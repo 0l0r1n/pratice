@@ -5,7 +5,7 @@ class UnionFind {
     private int[] id;
     private int count;
 
-    public UF(int n) {
+    public UnionFind(int n) {
         count = n;
         for (int i = 0; i < n; i++) id[i] = i;
     }
@@ -14,16 +14,22 @@ class UnionFind {
         return count;
     }
 
-    int connected(int p, int q) {
+    boolean connected(int p, int q) {
         return find(p) == find(q);
     }
 
-    int find(int p) {
-        return null;
+    boolean find(int p) {
+        return id[p];
     }
 
     void union(int p, int q) {
-
+        int pID = find(p);
+        int qID = find(q);
+       if ( pID == qID) return;
+       for (int i = 0; i < id.length; i++) {
+           if (id[i] == pID) id[i] = qID;
+       }
+       count--;
     }
 
     public static void main(String[] args) {
