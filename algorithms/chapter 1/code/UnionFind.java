@@ -18,18 +18,17 @@ class UnionFind {
         return find(p) == find(q);
     }
 
-    boolean find(int p) {
-        return id[p];
+    int find(int p) {
+        while (p != id[p]) p = id[p];
+        return p;
     }
 
     void union(int p, int q) {
-        int pID = find(p);
-        int qID = find(q);
-       if ( pID == qID) return;
-       for (int i = 0; i < id.length; i++) {
-           if (id[i] == pID) id[i] = qID;
-       }
-       count--;
+        int i = find(p);
+        int j = find(q);
+        if (i == j) return;
+        id[i] = j;
+        count--;
     }
 
     public static void main(String[] args) {
