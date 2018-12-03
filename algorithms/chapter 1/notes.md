@@ -38,3 +38,15 @@ public Interface IUF {
 
 - A a brute force quick find on 10 a large data set could take 30 years to compute
 - Quadratic algorithms do not scale with technology
+
+## Union-Find case study
+
+### Dynamic Connectivity
+
+The input is a a sequence of pairs of integers. Each integer represents an object of some type and we are to interpret the pair  pq as meaning "pq is connected to q." We assume that is connected to is an equivalence relation:
+
+- Reflexive: p is connected to p
+- Symetric: if p is connected to q, q is connected to p
+- Transitive: if p is connected to q and q is connected to r, p is connected to r
+
+The first thing you do before developing an algorithm is to specify the problem in a precise manner.
