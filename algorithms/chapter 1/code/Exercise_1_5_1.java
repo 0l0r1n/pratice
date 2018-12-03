@@ -1,11 +1,10 @@
-import edu.princeton.cs.algs4.*;
-
-class UnionFind {
+class Exercise_1_5_1 {
 
     private int[] id;
     private int count;
+    private int accesses;
 
-    public UnionFind(int n) {
+    public Exercise_1_5_1(int n) {
         count = n;
         id = new int[n];
         for (int i = 0; i < n; i++) id[i] = i;
@@ -20,7 +19,10 @@ class UnionFind {
     }
 
     int find(int p) {
-        while (p != id[p]) p = id[p];
+        while (p != id[p]) {
+            p = id[p];
+            accesses += 2;
+        }
         return p;
     }
 
@@ -29,12 +31,13 @@ class UnionFind {
         int j = find(q);
         if (i == j) return;
         id[i] = j;
+        accesses++;
         count--;
     }
 
     public static void main(String[] args) {
         int n = StdIn.readInt();
-        UnionFind uf = new UnionFind(n);
+        Exercise_1_5_1 uf = new Exercise_1_5_1(n);
         while (!StdIn.isEmpty()) {
             int p = StdIn.readInt();
             int q = StdIn.readInt();
@@ -44,4 +47,5 @@ class UnionFind {
         }
         StdOut.println(uf.count() + " components");
     }
+
 }

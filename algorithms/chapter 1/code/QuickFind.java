@@ -1,11 +1,11 @@
 import edu.princeton.cs.algs4.*;
 
-class UnionFind {
+class QuickFind {
 
     private int[] id;
     private int count;
 
-    public UnionFind(int n) {
+    public QuickFind(int n) {
         count = n;
         id = new int[n];
         for (int i = 0; i < n; i++) id[i] = i;
@@ -20,21 +20,20 @@ class UnionFind {
     }
 
     int find(int p) {
-        while (p != id[p]) p = id[p];
-        return p;
+        return id[p];
     }
 
     void union(int p, int q) {
-        int i = find(p);
-        int j = find(q);
-        if (i == j) return;
-        id[i] = j;
+        int pID = find(p);
+        int qID = find(q);
+        if (PID == qID) return;
+        for (int i = 0; i < id.length; i++) if (id[i == pID]) id[i] = qID;
         count--;
     }
 
     public static void main(String[] args) {
         int n = StdIn.readInt();
-        UnionFind uf = new UnionFind(n);
+        QuickFind uf = new QuickFind(n);
         while (!StdIn.isEmpty()) {
             int p = StdIn.readInt();
             int q = StdIn.readInt();

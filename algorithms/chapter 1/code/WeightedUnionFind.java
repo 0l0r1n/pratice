@@ -1,11 +1,12 @@
 import edu.princeton.cs.algs4.*;
 
-class UnionFind {
+class WeightedUnionFind {
 
     private int[] id;
+    private int[] sz;
     private int count;
 
-    public UnionFind(int n) {
+    public WeightedUnionFind(int n) {
         count = n;
         id = new int[n];
         for (int i = 0; i < n; i++) id[i] = i;
@@ -28,7 +29,13 @@ class UnionFind {
         int i = find(p);
         int j = find(q);
         if (i == j) return;
-        id[i] = j;
+        if (sz[i] < sz[j]) {
+            id[i] = j;
+            sz[j] += sz[i];
+        } else {
+            id[j] = i;
+            sz[i] += sz[j];
+        }
         count--;
     }
 
