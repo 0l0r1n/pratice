@@ -28,3 +28,41 @@ class Selection extends Sort {
     }
 }
 ```
+
+## Insertion sort
+
+For insertion sort, we make space to insert the current item by moving larger items one position to the right, before inserting the current item into the vacated position.
+
+```java
+class Insertion extends Sort {
+    @Override
+    public static void sort(Comparable[] a) {
+        int n = a.length;
+        for (int i = 1; i < n; i++) {
+            for (int j = i; j > 0 && less(a[j], a[j-1]); j--)
+                exchange(a, j, j - 1);
+        }
+    }
+}
+```
+
+## Shell Short
+
+This is an algorithm based on insertion sort, but faster. The idea is to rearrange the array to give it the property that taking every hth entry yields a sorted subsequence (insertion sort works well for partially sorted arrays). An h-sorted array is h independent sorted subsequences, interleaved together. By h-sorting for some large value of h, we can move items in the rray long distances and thus make it easier to h-sort for smaller values of h.
+
+```java
+public class Shell extends Sort {
+
+    public static void sort(Comparable[] a) {
+        int n = a.length;
+        int h = 1;
+        while (h < n/3) h = 3*h + 1;
+        while (h >= 1) {
+            for (int i = h; i < n; i++) {
+                for (int j = i; j>=h&& less(a[j], a[j-h]; j-=h)) exchange(a, j, j-h);
+            }
+            h = h/3;
+        }
+    }
+}
+```
