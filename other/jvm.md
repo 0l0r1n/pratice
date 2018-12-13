@@ -35,3 +35,21 @@ In this phase, all static variables are assigned with their value defined in the
 Classpath is a parameter in the Java Virtual Machine or the Java compiler that specifies the location of user-defined classes and packages. The parameter may be set either on the command-line, or through an environment variable.
 
 ### JVM Memory
+
+Method area: In method area, all class level information like class name, immediate parent class name, methods and variables information etc. are stored, including static variables. There is only one method area per JVM, and it is a shared resource.
+
+Heap area: all object information is stored in heap area. One heap area by JVM.
+
+Stack area: for every thread, JVM creates one run time stack which is stored here.
+
+PC Register: store address of current execution instruction of a thread.
+
+Native method stacks: For every thread, separate native stack is created. It stores native method information.
+
+### Execution Engine
+
+Executes the .class bytecode. It reads the bytecode line by line, use data and information present in various memory area and execute instructions. It can be classified in three parts:
+
+- Interpreter: It interprets the bytecode line by line and then executes. The disadvantage here is that when one method is called multiple times, every time interpretation is required.
+- JIT Compiler: It is used to increase efficiency of interpreter.It compiles the entire bytecode and changes it to native code so whenever interpreter see repeated method calls,JIT provide direct native code for that part so re-interpretation is not required,thus efficiency is improved.
+- Gargabe Collector: It destroy un-referenced objects.
