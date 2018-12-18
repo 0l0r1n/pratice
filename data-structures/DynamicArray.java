@@ -14,7 +14,7 @@ class DynamicArray {
         if (size == capacity) {
             capacity *= 2;
             int[] temp = new int[capacity];
-            for (int i = 0; i < capacity; i++) temp[i] = arr[i];
+            for (int i = 0; i < arr.length; i++) temp[i] = arr[i];
             arr = temp;
         }
         arr[size] = temp;
