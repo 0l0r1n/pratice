@@ -10,6 +10,10 @@ class BinaryTree {
         return containsNodeRecursively(root, value);
     }
 
+    Node search(int value) {
+        return search(root, value);
+    }
+
     private Node addRecursively(Node current, int value) {
         if (current == null) return new Node(value);
         else if (value < current.value) current.left = addRecursively(current.left, value);
@@ -36,6 +40,12 @@ class BinaryTree {
         current.right = deleteRecursively(current.right, value);
         return current;
     }
+
+    private Node search(Node current, int value)  { 
+        if (current ==null || current.value==value) return current; 
+        if (current.value > value) return search(current.left, value);  
+        return search(current.right, value); 
+    } 
 
     class Node {
         int value;
