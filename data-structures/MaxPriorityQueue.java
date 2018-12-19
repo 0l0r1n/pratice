@@ -12,12 +12,11 @@ public class MaxPriorityQueue<K extends Comparable<K>> {
         swim(n);
     }
 
-    K max() {
-        return pq[0];
-    }
-
     K delMax() {
-        return pq[0];
+        K max = pq[1];
+        swap(1, n--);
+        pq[n+1] = null;
+        return max;
     }
 
     boolean isEmpty() {
