@@ -27,9 +27,9 @@ class HashMap<K, V> {
                 } 
                 existingEntry = existingEntry.next;
             }
-            if (existingEntry.key.equals(key)) existing.value = value;
+            if (existingEntry.key.equals(key)) existingEntry.value = value;
             else {
-                existing.next = entry;
+                existingEntry.next = entry;
                 size++;
             }
         }

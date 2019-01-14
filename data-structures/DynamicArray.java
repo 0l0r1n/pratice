@@ -17,7 +17,7 @@ class DynamicArray {
             for (int i = 0; i < arr.length; i++) temp[i] = arr[i];
             arr = temp;
         }
-        arr[size] = temp;
+        arr[size] = val;
         size++;
     }
 

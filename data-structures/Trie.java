@@ -21,7 +21,7 @@ class Trie {
             TrieNode node = current.getChildren().get(ch);
             if (node == null) return false;
         }
-        return current.endOfword;
+        return current.isEndOfWord();
     }
 
     void delete(String word) {

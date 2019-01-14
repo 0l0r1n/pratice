@@ -34,7 +34,7 @@ class BinaryTree {
             if (current.right == null) return current.left;
             if (current.left == null) return current.right;
         } if (current.value > value) {
-            current.left = deleteRecursive(current.left, value);
+            current.left = deleteRecursively(current.left, value);
             return current;
         }
         current.right = deleteRecursively(current.right, value);

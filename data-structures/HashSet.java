@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Iterator;
 
 class HashSet<E> {
     private transient HashMap<E,Object> map;
@@ -10,7 +11,7 @@ class HashSet<E> {
     }
 
     public boolean add(E e) {
-        return map.put(E, PRESENT) == null;
+        return map.put(e, PRESENT) == null;
     }
 
     public boolean remove(E e) {
