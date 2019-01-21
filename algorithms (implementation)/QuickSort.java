@@ -12,7 +12,7 @@ public class QuickSort {
 
     private static void sortRandom(int[] arr, int lo, int hi) {
         if (lo >= hi) return;
-        int pivot = new Random(arr.length).nextInt();
+        int pivot = new Random(hi - lo + 1).nextInt();
         int index = partition(arr, lo, hi, pivot);
         sortRandom(arr, lo, index -1);
         sortRandom(arr, index, hi);
