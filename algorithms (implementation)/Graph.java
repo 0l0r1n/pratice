@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 
 public class Graph {
-    private HashMap<Integer, Node> nodeLookup = new HashMap<>();
+    public HashMap<Integer, Node> nodes = new HashMap<>();
 
     public static class Node {
         private int id;
@@ -12,7 +12,7 @@ public class Graph {
     }
 
     private Node getNode(int id) {
-        return nodeLookup.get(id);
+        return nodes.get(id);
     }
 
     public void addEdge(int source, int destination) {
