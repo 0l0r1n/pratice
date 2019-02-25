@@ -14,9 +14,16 @@ Approximate median selection algorithm. Used by quick select to search for a goo
 
 ## Databases
 
-### SQL
+### Relational
 
-Stands for structured query language. Used with RDBMS and RDSMS. Useful with structured data. Scope of SQL - data query, manipulation, definition and access control.
+Stands for structured query language. Used with RDBMS and RDSMS. Useful with structured data. Scope of SQL - data query, manipulation, definition and access control. Data is sctored across multiple tables and linked using relationships. Properties
+
+- Schema on write
+- Atomic values
+- Each row is unique
+- Sequence of columns is insignificant
+- Each column is named
+- Integrity constraints maintain data consistency across multiple tables
 
 #### CAP Theorem
 
@@ -56,7 +63,38 @@ Once a transaction has been commited, it will remain committed even in the case 
 
 ### NoSQL
 
+A schema on read type of database that enables extra flexibility without having to define a schema. Specially useful for big data. Reasons to choose NoSQL
+
+- Store large volumes of data that might have little to no structure
+- Make the most of cloud computing and storage
+- To speed development
+- To boost horizontal scalability
+
+Attributes:
+
+- Higher scalability
+- Distributed computing
+- Cost effective
+- Flexible schema/schema on ead
+- Able to process structured and semi-structured data
+- No relationships
+
+Types:
+
+- Key value
+- Column
+- Document
+- Graph
+
+#### BASE
+
+- Basically available
+- Soft state
+- Eventual consistency
+
 ### NewSQL
+
+New class of modern relational db systems that scale and perform like NoSQL for OLTP while maintaining ACID guarnatees.
 
 ## Bit Manipulation
 
