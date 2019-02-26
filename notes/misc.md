@@ -105,3 +105,5 @@ Registers are small memories withing the CPU, the nearest ones. These are accumu
 Cache resides within the processor chip. Very fast and nearer to cpu than ram. Main aim is to fill it with data which might be needed again soon. There are generally three levels, L1, L2 and L3. L3 is the largest and slowest.
 
 Different types of electrical circuits are used so they operate at different speeds.
+
+Computer storage is non-volative. That's their point in addition to RAM. HD are mechanical devices so they can't access info nearly as quickly as memory does. We use HDs because they are cheap and available. SSD are much faster alternatives to traditional HDs since they use integrated circuits.
