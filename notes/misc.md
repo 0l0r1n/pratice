@@ -117,3 +117,92 @@ LRUCache = new LRUCache<String, Bitmap>();
 ```
 
 Max amount of size needs to be set. It's like a special dictionary.
+
+Requirements:
+
+1. Fixed size: needs to have upper bound to limit memory usage
+
+2. Fast access: cache insert and lookup should be fast, o(1) time
+
+3. Replacement of entry in case, memory limit is reached
+
+## What happens when you navigate to website
+
+1. You enter the url into the browser www.facebook.com
+2. The browser looks up the IP address for the domain name. The DNS lookup works as follows:
+
+    - Browser cache (varies between 2 - 30 minutes)
+    - OS cache
+    - Router cache
+    - ISP DNS cache
+    - Recursive search
+
+3. The browser sends a http request to the web server. Anatomy of a request:
+
+  GET http://facebook.com/ HTTP/1.1
+  Accept: application/x-ms-application, image/jpeg, application/xaml+xml, [...]
+  User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; [...]
+  Accept-Encoding: gzip, deflate
+  Connection: Keep-Alive
+  Host: facebook.com
+  Cookie: datr=1265876274-[...]; locale=en_US; lsd=WW[...]; c_user=2101[...]
+
+  The GET request names the url to fetch. The browser identifies itself with the user-agent header and states what will accept. The connection header asks the server to keep the TCP connection open for further requests.
+
+  The request also contains cookies for the domain. Cookies are key value pairs that track state of a website.
+
+4. The server responds with a permanent redirect
+
+It tells the browser that it should use https://facebook.com
+
+5. Browser follows redirect
+
+Another get request is sent, but now to the redirected address. Header remain the same.
+
+6. Server handles the request
+
+The server receives the GET request, process it and send back a response. A LOT may happen here.
+
+7. The server sends back a response
+
+8. Browser begings rendering the html
+
+9. Browser sends requests for objects embedded in html
+
+Things like images, CSS, JS
+
+10. The browser sends further ajax requests
+
+## TCP VS UDP
+
+Both are protocols for sending bits of data (packets) over the internet. They are both built on top of the internet protoccol (sent via IP).
+
+### TCP
+
+Stands for transmission control protocol. It is the most commonly used protocol. When page is loaded, computer sends TCP packets to web server's address asking it to send web data to you. The server responds with a stream of packets which is stitched together by the browser and displayed to you. TCP is not one one communication, the receiving end aknowledges that it has received packages. TCP guarantees the recipient will receive the packets in order by numbering them. If a package is not received, it will send it again. TCP is all about realibility.
+
+### UDP
+
+Stands for user datagram protocl. A datagram is the same as a packet of information. Works similarly as TCP, but there is no error checking. No back and forth communication that slows things down. Used when speed is desirable, more than error correction. Used for live broadcasting, streaming and gaming.
+
+## Cookies
+
+Small data packets used to save state and monitor activity. A cookie is a piece of text that a Web server can store on a user's hard disk. Cookies allow a Web site to store information on a user's machine and later retrieve it. The pieces of information are stored as name-value pairs.
+
+## How to speed up website
+
+- Db indices for common queries
+- Better caching
+- Loading front end assets using CDN
+- Cleaning up zombie listeners
+- Minimize http requests
+- Minify and combine files
+- Use lazy loading and async loading
+- Minimize time to first byte - Server side thing
+- Reduce server response time
+- Switch dns provider
+- Choose the right hosting - shared hosting, VPS hosting or dedicated
+- Compress files
+- Enable compression
+- Enable browser caching
+- Use external hosting platforms
