@@ -107,3 +107,13 @@ Cache resides within the processor chip. Very fast and nearer to cpu than ram. M
 Different types of electrical circuits are used so they operate at different speeds.
 
 Computer storage is non-volative. That's their point in addition to RAM. HD are mechanical devices so they can't access info nearly as quickly as memory does. We use HDs because they are cheap and available. SSD are much faster alternatives to traditional HDs since they use integrated circuits.
+
+LRU Cache
+
+Least recently used cache. The objects that used the most stay in front of the queue.
+
+```java
+LRUCache = new LRUCache<String, Bitmap>();
+```
+
+Max amount of size needs to be set. It's like a special dictionary.
