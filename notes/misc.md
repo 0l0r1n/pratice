@@ -96,6 +96,12 @@ Types:
 
 New class of modern relational db systems that scale and perform like NoSQL for OLTP while maintaining ACID guarnatees.
 
-## Bit Manipulation
+## Registries, Caches, RAM and HDs
 
-### two's complement
+Hardware or software component that stores data so that future requests can be served faster. A cache hit occurs when requested data can be found in a cache while a cache miss occurs when it cannot.
+
+Registers are small memories withing the CPU, the nearest ones. These are accumulator, data register, progrm counter, general counter. Used for different tasks. Registers are crucial for cpu.
+
+Cache resides within the processor chip. Very fast and nearer to cpu than ram. Main aim is to fill it with data which might be needed again soon. There are generally three levels, L1, L2 and L3. L3 is the largest and slowest.
+
+Different types of electrical circuits are used so they operate at different speeds.
