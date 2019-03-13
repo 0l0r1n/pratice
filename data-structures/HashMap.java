@@ -9,7 +9,7 @@ class HashMap<K, V> {
     }
 
     public HashMap(int capacity) {
-        this.buckets = new Entry[capacity];
+        this.buckets =(Entry[])new Object[capacity];
     }
 
     public void put(K key, V value) {
