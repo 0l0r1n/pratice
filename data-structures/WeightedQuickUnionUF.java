@@ -19,7 +19,10 @@ public class WeightedQuickUnionUF {
     }
 
     public int find(int p) {
-        while (p != id[p]) p = id[p];
+        while (p != id[p]) {
+            id[p] = id[id[p]];
+            p = id[p];
+        }
         return p;
     }
 
