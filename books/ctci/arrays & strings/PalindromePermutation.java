@@ -2,7 +2,8 @@ import java.util.HashMap;
 
 /*
     A palindrome is a word or phrase that is the same forwards or backwards.
-    Characteristics of a palindrome = even chars of each + allows one odd char 
+    Characteristics of a palindrome = even chars of each + allows one odd char. 
+    We can further expand this to ignore whitespace as well as capitalisation
 */
 public class PalindromePermutation {
     
