@@ -11,6 +11,8 @@ public class PalindromePermutation {
         HashMap<Character, Integer> frequency = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
+            int x = getCharNumber(ch);
+            if (x == - 1) continue;
             if (frequency.containsKey(ch)) frequency.put(ch, frequency.get(ch) + 1);
             else frequency.put(ch, 1);
         }
@@ -24,12 +26,16 @@ public class PalindromePermutation {
         return true;
     }
 
-    // space is O(1). Time remains O(n) where n is the length of the string
-    public static boolean solveWithBitVector(String s) {
-        return false;
+    private static int getCharNumber(char ch) {
+        int a = Character.getNumericValue('a');
+        int z = Character.getNumericValue('z');
+        int val = Character.getNumericValue(ch);
+        if (a <= val && val <= z) return val - a;
+        return -1;
     }
+
     public static void main(String[] args) {
-        System.out.println(solveWithHashTable("tactcoa"));
+        System.out.println(solveWithHashTable("tact coa"));
         System.out.println(solveWithHashTable("aabbaa"));
         System.out.println(solveWithHashTable("tactcoapapa"));
         System.out.println(solveWithHashTable("dhakweqasdn"));
