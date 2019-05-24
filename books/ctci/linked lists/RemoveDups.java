@@ -1,12 +1,22 @@
 public class RemoveDups {
     
     public static Node solveWithHashSet(Node n) {
-        int head = n;
+        Node head = n;
         HashSet<Integer> found = new HashSet<>();
+        Node prev = n;
         for (Node pointer = n; pointer != n; pointer = pointer.next) {
-            if (found.countains(n.val) && n.next != null) n.next = n.next.next;
-            else found.add(n.val);
+            if (found.countains(n.val) && n.next != null) {
+                prev.next = n.next.next;
+            }  else {
+                found.add(n.val);
+                prev = n.next;
+            }
         }
+        return head;
+    }
+
+    public static Node solveWithoutBuffer(Node n) {
+        Node head = n;
         return head;
     }
 
