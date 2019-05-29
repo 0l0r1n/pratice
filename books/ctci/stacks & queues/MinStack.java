@@ -5,7 +5,7 @@ public class MinStack extends Stack<Integer> {
     Stack<Integer> min;
 
     public MinStack() {
-        minStack = new Stack<>();
+        min = new Stack<>();
     }
 
     public void push(int value) {
@@ -17,7 +17,7 @@ public class MinStack extends Stack<Integer> {
 
     public Integer pop() {
         int value = super.pop();
-        if (value == min()) {
+        if (value == getMin()) {
             s2.pop();
         }
         return value;
