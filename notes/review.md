@@ -115,12 +115,50 @@ Operations will only process if there is a terminal operation present. As soon a
 
 - Used with JUnit to mock objects, external dependencies and predict behaviour
 - Always @RunWith(Mockito.JUnitRunner.class) to init mocks
+- when/then
+- @InjectMocks for DI
+
+### Generics
+
+- ? wildcard: unbounded
+- ? extends T: upper bound
+- ? super T: lower bound
 
 ### Debugging
 
-Java debugger - how to use it?
+- Set breakpoints
+- Click on bug icon
+- Rejoyce
 
 ### Monitoring
+
+There are two types of metrics to be concerned with: JVM and underlying infrastructure.
+
+- Use a JVM profiler to monitor cpu/memory usage/GC activity
+- Java Web Requests and Transactions
+- RUM (Real User Monitoring)
+- Server logs
+
+#### JVM Monitoring
+
+- Heap usage
+- GC
+- Active threads
+- Response time
+
+#### Infrastructure Monitoring
+
+- CPU Utilization
+- Memory usage/RAM
+- Available Threads
+- Open File Descriptors
+- Database Connections
+- SLA
+- Latency
+- Success of API Endpoints
+- Average Response Times
+- Errors and Exceptions
+- Health and Status of Dependencies
 
 ### Performance
 
@@ -133,8 +171,6 @@ Java debugger - how to use it?
 #### Deadlocks
 
 #### Thread Dumps
-
-### Generics
 
 ## System design
 
