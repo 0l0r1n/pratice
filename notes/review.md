@@ -42,7 +42,43 @@ During a full garbage collection event, unusued objects in all generations are g
 
 ### Collections
 
+Framework that provides an architecture to store and manipulate groups of objects. Can achieve all operations that you perform on a data such as searching, inserting, sorting, manipulating and deleting.
 
+It has:
+
+1. Interfaces and implementations
+2. Algorithms
+
+#### Interfaces/Classes
+
+- Iterator
+- Iterable
+- Collection
+- List
+
+- ArrayList: dynamic array
+- LinkedList: doubly linked list
+- Vector: synchronized dynamic arary
+- Stack: LIFO
+- Queue: FIFO
+- PriorityQueue: stored by priorities
+- Deque: can add and remove from both sides
+- ArrayDeque: implementation of Deque
+- Set: unordered elements
+- HashSet: implementation of Set that uses a hash table for storage
+- LinkedHashSet: extension of HashSet; maintains orders
+- SortedSet: implementation of set and provides total ordering
+- TreeSet: set that uses tree for storage
+- Map: key value/pairs
+- HashMap: implementation of map; unordered
+- LinkedHashMap: maintains insertion order
+- TreeMap: maintains insertion order (RBT)
+- HashMap is not synchronised or thread-safe; can't be shared between many threads without proper sync code
+- HashMap allows one null key
+
+#### Java 8
+
+##### Streams
 
 ### Debugging
 
@@ -53,3 +89,5 @@ During a full garbage collection event, unusued objects in all generations are g
 ### Memory Management
 
 ### Concurrency
+
+### Generics
