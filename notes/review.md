@@ -80,7 +80,37 @@ It has:
 
 ##### Streams
 
+- Used to process collection of objects; a stream is a sequence of objects that support various methods which can be pipelined.
+- Do not change original data
+- Lazily executed
+- Support functional programming style
+- Can be parallel
+- Operations can be intermediate or terminal
+
+###### Intermediate
+
+1. map
+2. filter
+3. sorted
+4. flatMap
+
+###### Terminal
+
+1. Collect
+2. forEach
+3. reduce
+
+Operations will only process if there is a terminal operation present. As soon as you call any terminal operation, the stream is closed.
+
+### Testing
+
+#### JUnit
+
+#### Mockito
+
 ### Debugging
+
+Java debugger - how to use it?
 
 ### Monitoring
 
@@ -90,4 +120,24 @@ It has:
 
 ### Concurrency
 
+#### Multithreading
+
+#### Deadlocks
+
+#### Thread Dumps
+
 ### Generics
+
+## System design
+
+### Scalability
+
+### Security
+
+- web, CSRF
+
+### Microservices
+
+### Connection pool
+
+### Rest API
