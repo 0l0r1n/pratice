@@ -106,7 +106,15 @@ Operations will only process if there is a terminal operation present. As soon a
 
 #### JUnit
 
+- Defined with @Test
+- Use @Before for setup
+- Use assert to check results
+- Can setup test suite
+
 #### Mockito
+
+- Used with JUnit to mock objects, external dependencies and predict behaviour
+- Always @RunWith(Mockito.JUnitRunner.class) to init mocks
 
 ### Debugging
 
