@@ -2,6 +2,10 @@
 
 ## Java
 
+### Best practices
+
+1. Return empty collections/optionals instead of null
+
 ### Garbage Collection
 
 - Process by which Java performs automatic memory management
@@ -162,13 +166,52 @@ There are two types of metrics to be concerned with: JVM and underlying infrastr
 
 ### Performance
 
+Can be defined in multiple ways but basics are:
+
+- the ability of a program to perform its computing tasks within the business response time requirements
+- Ability of application to fulfill its business functions under high volume with high reliability and low latency
+- JVM pauses for GC on young generation
+
+Tips:
+
+- Don't do pre-mature optimization
+- Work on biggest bottlenecks first
+- Use a profiler
+
+#### Areas of concern
+
+- Performance degradation JVM restart: avoid deploying excessive amount of java classes to a singel application classloader.
+- Excessive class loading contention observed at runtime (thread locks, JAR file searches): profile app and identify code modules performing dynamic class loading operations too frequently; be careful with reflection
+
 ### Memory Management
+
+Memory leaks often involve small amounts of memory resources. Reported with a java.lang.OutOfMemoryError.
 
 ### Concurrency
 
+- It is defined as ability to execute several tasks in parallel.
+- synchronized keyword: only one thread at a time allowed to access parts of the code. Immutable data structures to the rescue!
+
+#### Thread lock contention
+
+By fast the most common concurrency problem. When 1 to n thread (s) is waiting to acquire a lock on a particular object.
+
 #### Multithreading
 
+Threads are lightweight processes within a process. Can be used by:
+
+1. Extending the thread class
+2. Implementing the runnable interface
+
+#### Monitors
+
 #### Deadlocks
+
+- Triggered when two or more threads are blocked forever, waiting for each other.
+
+#### Clock Time and CPU Burn
+
+It is important to know highest clock time and CPU burn contributors. High CPU consumption is often a symptom of inefficient implementation.
 
 #### Thread Dumps
 
