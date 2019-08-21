@@ -16,7 +16,13 @@
 10. Always override toString
 11. Minimise accessibility of classes and members
 12. Use accessors
-13. Minimise mutability
+13. Minimise mutability - no state changes, fields are final, class cannot be extended, fields are private. Classes should be mutable unless there is a good reason to make them immutable
+14. Favour composition over inheritance
+15. Prefer interfaces to abstract classes - java only allows one extension but multiple implementations
+16. Use bounded wild cards to increase API flexibility
+17. Make defensive copies when needed
+18. Avoid float and double. Use BigDecimal
+19. Use checked exceptions for recoverable conditions and runtime exceptions for programming errors
 
 ### Garbage Collection
 
@@ -127,14 +133,14 @@ Operations will only process if there is a terminal operation present. As soon a
 - Use assert to check results
 - Can setup test suite
 
-What is a rule?
-
 #### Mockito
 
 - Used with JUnit to mock objects, external dependencies and predict behaviour
 - Always @RunWith(Mockito.JUnitRunner.class) to init mocks
 - when/then
 - @InjectMocks for DI
+- What is a rule?
+- Argument captors?
 
 ### Generics
 
@@ -208,6 +214,23 @@ Memory leaks often involve small amounts of memory resources. Reported with a ja
 
 - It is defined as ability to execute several tasks in parallel.
 - synchronized keyword: only one thread at a time allowed to access parts of the code. Immutable data structures to the rescue!
+- You can't avoid concurrency
+- synchronized is not just about mutex
+- synchronization guarantees that no method will observe the object in an inconsistent state
+- volatile keyword - never cache, always read it from main memory
+- confine mutable data to a single thread
+- A thread is an independent path of execution
+- Process has many threads with shared memory space
+- Vector is thread-safe and array list is not
+- There is no guarantee a thread will stop calling stop. Better use volatile variables instead
+
+#### Levels of thread safety
+
+- Immutable
+- Unconditionally thread-safe
+- Conditionally thread-safe
+- Not thread-safe
+- Thread-hostile
 
 #### Thread lock contention
 
@@ -229,8 +252,6 @@ Threads are lightweight processes within a process. Can be used by:
 #### Clock Time and CPU Burn
 
 It is important to know highest clock time and CPU burn contributors. High CPU consumption is often a symptom of inefficient implementation.
-
-#### Thread Dumps
 
 ## System design
 
