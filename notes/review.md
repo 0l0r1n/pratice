@@ -5,6 +5,18 @@
 ### Best practices
 
 1. Return empty collections/optionals instead of null
+2. Use string builder
+3. Use finally
+4. Use static factory methods: named, do not necessarily require a new object; can return a subtype of the requested object.
+5. use a builder to facilitate construction when there is a lot of params
+6. DI over hardwiring
+7. Avoid creating unnecessary objects. Reuse objects when it makes sense to do so
+8. Eliminate object references that are nto being used - careful with caches, listeners and other callbacks
+9. Obey general rules when overriding equals/hashcode. Always override hashcode when overriding equals
+10. Always override toString
+11. Minimise accessibility of classes and members
+12. Use accessors
+13. Minimise mutability
 
 ### Garbage Collection
 
@@ -115,6 +127,8 @@ Operations will only process if there is a terminal operation present. As soon a
 - Use assert to check results
 - Can setup test suite
 
+What is a rule?
+
 #### Mockito
 
 - Used with JUnit to mock objects, external dependencies and predict behaviour
@@ -186,6 +200,9 @@ Tips:
 ### Memory Management
 
 Memory leaks often involve small amounts of memory resources. Reported with a java.lang.OutOfMemoryError.
+
+- Always release db connections
+- Try to use finally block
 
 ### Concurrency
 
