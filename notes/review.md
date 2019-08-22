@@ -139,8 +139,7 @@ Operations will only process if there is a terminal operation present. As soon a
 - Always @RunWith(Mockito.JUnitRunner.class) to init mocks
 - when/then
 - @InjectMocks for DI
-- What is a rule?
-- Argument captors?
+- Use argument captors to make sure a specific argument was passed to another class
 
 ### Generics
 
